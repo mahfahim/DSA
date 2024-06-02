@@ -20,6 +20,7 @@ int main()
         if(n%i==0)
         {
             divisor.push_back(i);
+            if(i!=(n/i))
             divisor.push_back(n/i);
         }
     }
