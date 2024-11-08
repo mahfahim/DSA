@@ -30,16 +30,8 @@ vector<ll> all_prime_function(ll n)
 
 }
 
-int main()
+map<ll,ll> prime_factor_count(vector<ll> ap, ll n)
 {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    ll n;
-    cin >> n;//48
-    vector<ll> ap;
-    ap=all_prime_function(n);
-
     map<ll,ll> cnt;
 
     ll idx = 0;
@@ -58,7 +50,19 @@ int main()
             idx++;
         }
     }
-
+    return cnt;
+}
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    ll n;
+    cin >> n;//48
+    vector<ll> ap = all_prime_function(n);
+    
+    map<ll,ll> cnt = prime_factor_count(ap,n);
+   
     for(auto [x,y]:cnt)
     {
         cout << x << "^" << y << endl;

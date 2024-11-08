@@ -6,14 +6,9 @@ using namespace std;
 #define ull unsigned long long
 #define ldb long double
 
-int main()
+vector<bool> prime(1000000+1,true);
+void siv(int n)
 {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    int n;
-    cin >> n;
-    vector<bool> prime(n+5,true);
     prime[1]=false;
     for(int i=2;i*i<=n;i++)
     {
@@ -25,10 +20,19 @@ int main()
         }
        }
     }
-
+}
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int n;
+    cin >> n;
+    siv(n);
+    
     for(int i=1;i<=n;i++)
     {
-        if(prime[i]) cout << i <<" ";
+        if(prime[i]) cout << i <<endl;
 
     }
     cout << endl;
